@@ -9,18 +9,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 :root{--c1:#00f5ff;--c2:#7f00ff;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-  background:#000;
-  font-family:'Orbitron',sans-serif;
-  color:#fff;
-  overflow:hidden;
-}
-
+body{background:#000;font-family:'Orbitron',sans-serif;color:#fff;overflow:hidden;}
 canvas#brain{position:fixed; inset:0; z-index:1;}
 .ui{position:relative; z-index:2; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px;}
-.logo{font-size:80px; font-weight:700; letter-spacing:8px; color:var(--c1); text-shadow:0 0 20px var(--c1),0 0 50px var(--c2); animation:pulse 2s infinite alternate;}
+.logo{font-size:80px;font-weight:700;letter-spacing:8px;color:var(--c1);text-shadow:0 0 20px var(--c1),0 0 50px var(--c2);animation:pulse 2s infinite alternate;}
 @keyframes pulse{from{transform:scale(1)} to{transform:scale(1.05)}}
-.core{width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,var(--c1),transparent 65%); box-shadow:0 0 40px var(--c1),0 0 80px var(--c2); margin:40px 0; animation:corePulse 3s infinite alternate; cursor:pointer;}
+.core{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,var(--c1),transparent 65%);box-shadow:0 0 40px var(--c1),0 0 80px var(--c2);margin:40px 0;animation:corePulse 3s infinite alternate;cursor:pointer;}
 @keyframes corePulse{from{transform:scale(1)} to{transform:scale(1.12)}}
 .chat-box{width:100%; max-width:800px; background:rgba(0,0,0,0.7); border-radius:20px; padding:20px; backdrop-filter:blur(10px);}
 .messages{height:260px; overflow-y:auto; text-align:right; margin-bottom:15px;}
@@ -98,7 +92,7 @@ function speak(text){
 /* ===== إرسال السؤال إلى الباكند ===== */
 async function getAnswer(userText){
   try{
-    const res = await fetch("https://YOUR_BACKEND_URL/ask",{ // ضع رابط الباكند هنا
+    const res = await fetch("https://YOUR_BACKEND_URL/ask",{  // ضع رابط الباكند هنا
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body: JSON.stringify({question:userText})
