@@ -1,0 +1,26 @@
+*{box-sizing:border-box;}
+body{margin:0;background:black;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;}
+
+#game{width:800px;height:400px;overflow:hidden;position:relative;background:linear-gradient(#5c94fc,#9fdcff);border:4px solid #000;}
+#world{position:absolute;width:4000px;height:100%;left:0;}
+
+#player{position:absolute;width:32px;height:32px;background:white;border-radius:6px;bottom:80px;left:0;z-index:10;}
+
+.ground{position:absolute;bottom:0;height:80px;background:linear-gradient(#2ecc71 0 20px,#7c4a1e 20px);}
+.platform{position:absolute;width:140px;height:20px;background:#2ecc71;border-radius:6px;}
+.trap{position:absolute;width:40px;height:40px;background:red;clip-path:polygon(50% 0,100% 100%,0 100%);}
+.trap.move{animation:trapMove 2s infinite alternate;}
+@keyframes trapMove{from{transform:translateY(0)}to{transform:translateY(80px);}}
+
+.enemy{position:absolute;width:32px;height:32px;background:orange;border-radius:6px;}
+.enemy.move{animation:enemyMove 2s infinite alternate;}
+@keyframes enemyMove{from{transform:translateX(0)}to{transform:translateX(80px)}}
+
+#dpad{position:fixed;left:15px;bottom:15px;display:flex;flex-direction:column;gap:6px;z-index:20;}
+#dpad button{width:60px;height:60px;font-size:22px;border:none;border-radius:12px;background:#222;color:#fff;}
+.row{display:flex;gap:6px;}
+#dpad button:active{background:#555;}
+
+#overlay{position:absolute;inset:0;background:rgba(0,0,0,.8);color:white;display:none;justify-content:center;align-items:center;font-size:48px;z-index:50;}
+.shake{animation:shake .15s infinite;}
+@keyframes shake{0%{transform:translate(0,0)}50%{transform:translate(4px,0)}100%{transform:translate(-4px,0);}}
