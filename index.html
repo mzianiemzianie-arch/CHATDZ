@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دردشة ذكية مع DeepSeek OCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- رأس الصفحة -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>DeepSeek Chat</h1>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </header>
+
+        <!-- منطقة المحادثة -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2><i class="fas fa-comments"></i> دردشة مع DeepSeek-OCR-2</h2>
+                <div class="model-info">
+                    <span class="model-badge">DeepSeek-OCR-2</span>
+                    <span class="status online"><i class="fas fa-circle"></i> متصل</span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- الرسائل تظهر هنا -->
+                <div class="message bot">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="content">
+                        <div class="sender">DeepSeek Assistant</div>
+                        <div class="text">مرحبًا! أنا مساعد DeepSeek-OCR-2. كيف يمكنني مساعدتك اليوم؟</div>
+                        <div class="time">الآن</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أدوات إضافية -->
+            <div class="chat-tools">
+                <button class="tool-btn" id="ocr-btn">
+                    <i class="fas fa-camera"></i> OCR تحليل
+                </button>
+                <button class="tool-btn" id="clear-btn">
+                    <i class="fas fa-trash"></i> مسح المحادثة
+                </button>
+                <button class="tool-btn" id="export-btn">
+                    <i class="fas fa-download"></i> تصدير
+                </button>
+            </div>
+
+            <!-- منطقة الإدخال -->
+            <div class="input-area">
+                <div class="input-container">
+                    <textarea 
+                        id="message-input" 
+                        placeholder="اكتب رسالتك هنا... (أو قم بسحب وإسقاط صورة لتحليلها بواسطة OCR)"
+                        rows="2"
+                    ></textarea>
+                    <div class="input-actions">
+                        <button class="action-btn" id="image-upload">
+                            <i class="fas fa-image"></i>
+                        </button>
+                        <button class="action-btn" id="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="upload-zone" id="upload-zone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>اسحب وأفلت الصور هنا للتحليل بواسطة OCR</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- معلومات إضافية -->
+        <footer class="footer">
+            <p>Powered by <strong>DeepSeek-OCR-2</strong> | تم التطوير بواسطة <span class="user-name">هارون</span></p>
+            <div class="features">
+                <span><i class="fas fa-check-circle"></i> تحليل النصوص من الصور</span>
+                <span><i class="fas fa-check-circle"></i> فهم سياقي متقدم</span>
+                <span><i class="fas fa-check-circle"></i> دعم اللغة العربية</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- نافذة تحميل الصور -->
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-camera"></i> تحميل صورة للتحليل</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="image-preview" id="image-preview"></div>
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <button class="btn upload-btn" id="select-image">
+                    <i class="fas fa-folder-open"></i> اختر صورة
+                </button>
+                <button class="btn analyze-btn" id="analyze-btn" disabled>
+                    <i class="fas fa-search"></i> تحليل النص باستخدام OCR
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
